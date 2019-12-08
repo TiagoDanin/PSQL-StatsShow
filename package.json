@@ -13,6 +13,22 @@
 		"url": "https://TiagoDanin.github.io"
 	},
 	"license": "MIT",
+	"keywords": [
+		"admin-dashboard",
+		"monitor",
+		"monitoring-server",
+		"performance",
+		"performance-analysis",
+		"postgres",
+		"postgresql",
+		"server-monitor",
+		"server-monitoring",
+		"sql",
+		"stat",
+		"statements",
+		"statistics",
+		"stats"
+	],
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon --watch views --watch index.js --watch css --watch base -e handlebars,js,css js index.js --dev --password 1234",
@@ -37,6 +53,7 @@
 	"files": [
 		"LICENSE",
 		"README.md",
+		"base",
 		"css",
 		"index.js",
 		"package.json",
@@ -47,11 +64,11 @@
 		"cookie-session": "^2.0.0-beta.3",
 		"express": "^4.17.1",
 		"express-handlebars": "3.1.0",
-		"minimist": "^1.2.0",
-		"uikit": "^3.1.6",
 		"handlebars-helpers": "^0.10.0",
+		"minimist": "^1.2.0",
 		"pg": "7.14.0",
-		"pg-native": "3.0.0"
+		"pg-native": "3.0.0",
+		"uikit": "^3.1.6"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.1",
