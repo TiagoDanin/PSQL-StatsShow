@@ -5,7 +5,7 @@
 		"psqlstatsshow": "index.js"
 	},
 	"preferGlobal": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Web Monitoring PostgreSQL- Tracking execution statistics of all SQL statements executed by a server.",
 	"author": {
 		"email": "TiagoDanin@outlook.com",
@@ -68,8 +68,8 @@
 		"minimist": "^1.2.0",
 		"pg": "7.14.0",
 		"pg-native": "3.0.0",
-		"uikit": "^3.1.6",
-		"reload": "^3.0.3"
+		"reload": "^3.0.3",
+		"uikit": "^3.1.6"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.1",
