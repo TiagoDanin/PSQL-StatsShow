@@ -164,7 +164,6 @@ const search = async (req, res) => {
 		result = {}
 		result.keys = Object.keys(select[0])
 		result.data = select.map(elemt => Object.values(elemt))
-
 	}
 
 	return res.render('search', {
@@ -213,7 +212,7 @@ app.get('/login', (req, res) => {
 	})
 })
 
-app.post('/login', (req, res) => {
+app.post('/login',async (req, res) => {
 	req.session.password = req.body.password
 	req.session.database = req.body.database
 
@@ -221,7 +220,12 @@ app.post('/login', (req, res) => {
 		database = new Database({
 			database: req.session.database
 		})
-		return res.redirect('/dashboard')
+		await database.get('SELECT $1', ['Hello world!']).catch(error => {
+			req.session.password = ''
+			return res.redirect('/login')
+		}).then(() => {
+			return res.redirect('/dashboard')
+		})
 	}
 
 	return res.redirect('/login')
