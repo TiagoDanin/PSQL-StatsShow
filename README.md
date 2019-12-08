@@ -1,6 +1,6 @@
 # PSQL StatsShow
 
-[![Downloads](https://img.shields.io/npm/dt/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![Node](https://img.shields.io/node/v/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![Version](https://img.shields.io/npm/v/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![XO code style](https://img.shields.io/badge/code%20style-XO-red.svg?style=flat-square)](https://github.com/xojs/xo) 
+[![Travis](https://img.shields.io/travis/TiagoDanin/PSQL-StatsShow.svg?branch=master&style=flat-square)](https://travis-ci.org/TiagoDanin/PSQL-StatsShow) [![Downloads](https://img.shields.io/npm/dt/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![Node](https://img.shields.io/node/v/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![Version](https://img.shields.io/npm/v/psqlstatsshow.svg?style=flat-square)](https://npmjs.org/package/psqlstatsshow) [![XO code style](https://img.shields.io/badge/code%20style-XO-red.svg?style=flat-square)](https://github.com/xojs/xo) 
 
 Web Monitoring PostgreSQL- Tracking execution statistics of all SQL statements executed by a server.
 
@@ -62,22 +62,16 @@ yarn test
 	<b>Version</b>: 3.1.0
 </details>
 <details>
-	<summary><a href="https://ghub.io/minimist">minimist</a>: parse argument options</summary>
-	<b>Author</b>: James Halliday</br>
-	<b>License</b>: MIT</br>
-	<b>Version</b>: ^1.2.0
-</details>
-<details>
-	<summary><a href="https://ghub.io/uikit">uikit</a>: UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.</summary>
-	<b>Author</b>: aheinze, janschoenherr, saschadube</br>
-	<b>License</b>: MIT</br>
-	<b>Version</b>: ^3.1.6
-</details>
-<details>
 	<summary><a href="https://ghub.io/handlebars-helpers">handlebars-helpers</a>: More than 130 Handlebars helpers in ~20 categories. Helpers can be used with Assemble, Generate, Verb, Ghost, gulp-handlebars, grunt-handlebars, consolidate, or any node.js/Handlebars project.</summary>
 	<b>Author</b>: Jon Schlinkert</br>
 	<b>License</b>: MIT</br>
 	<b>Version</b>: ^0.10.0
+</details>
+<details>
+	<summary><a href="https://ghub.io/minimist">minimist</a>: parse argument options</summary>
+	<b>Author</b>: James Halliday</br>
+	<b>License</b>: MIT</br>
+	<b>Version</b>: ^1.2.0
 </details>
 <details>
 	<summary><a href="https://ghub.io/pg">pg</a>: PostgreSQL client - pure javascript &amp; libpq with the same API</summary>
@@ -90,6 +84,12 @@ yarn test
 	<b>Author</b>: Brian M. Carlson</br>
 	<b>License</b>: MIT</br>
 	<b>Version</b>: 3.0.0
+</details>
+<details>
+	<summary><a href="https://ghub.io/uikit">uikit</a>: UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.</summary>
+	<b>Author</b>: aheinze, janschoenherr, saschadube</br>
+	<b>License</b>: MIT</br>
+	<b>Version</b>: ^3.1.6
 </details>
 
 ## Dev Dependencies
