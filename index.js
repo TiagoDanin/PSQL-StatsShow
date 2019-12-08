@@ -126,11 +126,19 @@ app.get(['/', '/dashboard'], async (req, res) => {
 		qtTitle: 'Block',
 		list: await database.maxTime()
 	}]
-
+	const configFile = await database.get('SHOW config_file;', [])
+	const blockSize = await database.get('SHOW block_size;', [])
+	const maxConnections = await database.get('SHOW max_connections;', [])
+	const timeZone = await database.get('SHOW timezone;', [])
+	
 	return res.render('dashboard', {
 		...handlebarsContext,
 		result: result.map(elemt => {
 			return {
+				configFile: configFile[0].config_file,
+				blockSize: blockSize[0].block_size,
+				maxConnections: maxConnections[0].max_connections,
+				timeZone: timeZone[0].TimeZone,
 				...elemt,
 				...handlebarsContext
 			}

@@ -4,8 +4,12 @@
 	<div class="uk-card uk-card-default uk-card-body" id="card-query">
 		<p class="uk-card-title uk-margin-remove">Info</p>
 		<div class="uk-overflow-hidden">
-			<ul class="uk-list uk-list-bullet">
+			<ul class="uk-list">
 				<li>Database: {{database}}</li>
+				<li>ConfigFile: {{configFile}}</li>
+				<li>BlockSize: {{blockSize}}</li>
+				<li>MaxConnections: {{maxConnections}}</li>
+				<li>TimeZone: {{timeZone}}</li>
 				{{#isDevMode}}
 				<li>DevMode: true</li>
 				{{/isDevMode}}
