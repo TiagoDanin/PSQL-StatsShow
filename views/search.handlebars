@@ -1,0 +1,41 @@
+<div class="card uk-card uk-card-default uk-card-body uk-align-center uk-text-center">
+	<form action="/search" method="post">
+		<div class="uk-margin" uk-grid>
+
+			<span class="uk-text-bold">Query</span>
+			<div class="uk-inline uk-width-1-1">
+				<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: search"></span>
+				<input class="uk-input" name="query" type="query">
+			</div>
+
+			<div class="uk-width-1-1">
+				<button class="uk-button uk-button-default uk-button-text" type="submit" name="ok"
+					value="true">Get</button>
+			</div>
+		</div>
+	</form>
+
+	{{#result}}
+	<p class="uk-card-title uk-margin-remove">Result</p>
+	<div class="uk-overflow-auto">
+		<table class="uk-table uk-table-striped" id="table-query">
+			<thead>
+				<tr>
+					{{#each keys}}
+						<th>{{.}}</th>
+					{{/each}}
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr id="tr-query" onclick="modalQuery(this)">
+					{{#each .}}
+						<td>{{.}}</td>
+					{{/each}}
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	{{/result}}
+</div>

@@ -1,0 +1,16 @@
+
+#table-query {
+	white-space: nowrap;
+}
+
+#tr-query:hover {
+	background-color: rgba(0, 0, 0, 0.15)
+}
+
+#card-query {
+	border-color: #e6e6e6;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 0px;
+	box-shadow: 10px 10px 8px #888888
+}

@@ -77,6 +77,13 @@ app.use((req, res, next) => {
 		return false
 	}
 
+	if (!database) {
+		database = new Database({
+			database: req.session.database
+		})
+	}
+	handlebarsContext.database = req.session.database
+
 	return next()
 })
 
@@ -87,12 +94,6 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.get(['/', '/dashboard'], async (req, res) => {
-	if (!database) {
-		database = new Database({
-			database: req.session.database
-		})
-	}
-	handlebarsContext.database = req.session.database
 	console.log('[!] Dashboard')
 
 	const result = [{
@@ -136,6 +137,45 @@ app.get(['/', '/dashboard'], async (req, res) => {
 		path: '/dashboard'
 	})
 })
+
+const search = async (req, res) => {
+	const query = req.body.query
+	let result = undefined
+	if (query) {
+		const select = await database.get(query, []).catch(error => {
+			res.render('alert', {
+				...handlebarsContext,
+				path: req.path,
+				text: error
+			})
+			return undefined
+		})
+
+		if (!select) {
+			return undefined
+		} else if (select.error) {
+			return res.render('alert', {
+				...handlebarsContext,
+				path: req.path,
+				text: select.error
+			})
+		}
+	
+		result = {}
+		result.keys = Object.keys(select[0])
+		result.data = select.map(elemt => Object.values(elemt))
+
+	}
+
+	return res.render('search', {
+		...handlebarsContext,
+		result,
+		path: '/dashboard'
+	})
+}
+
+app.post('/search', search)
+app.get('/search', search)
 
 app.get('/close', async (req, res) => {
 	if (!isEnableClose) {
