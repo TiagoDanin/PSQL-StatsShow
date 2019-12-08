@@ -1,0 +1,44 @@
+.uk-navbar-nav>li>a {
+    color: #fff;
+}
+
+.uk-navbar-nav>li>a:active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.uk-navbar-nav>li:hover>a,.uk-navbar-nav>li>a.uk-open,.uk-navbar-nav>li>a:focus {
+    color: rgba(252, 252, 252, 0.835);
+}
+
+.uk-width-expand {
+	min-width: 50%;
+}
+
+@media (min-width: 640px) {
+	.uk-width-expand\@s {
+		padding: 5!important;
+	}
+}
+
+.uk-comment-primary {
+	margin: 5;
+}
+
+.uk-link:hover, a:hover {
+	text-decoration: underline;
+}
+
+.uk-button-text {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.uk-nav-parent-icon>.uk-parent>a::after {
+	width: 0;
+	height: 0;
+}
+
+.uk-card-default {
+	font-size: 100%;
+}

@@ -1,12 +1,23 @@
-<div class="card uk-card uk-card-default uk-card-body uk-align-center uk-text-center">
+<div class="card uk-card uk-card-default uk-card-body uk-align-center uk-text-center" id="login-card">
 	<form action="/login" method="post">
-		<div class="uk-margin">
+		<div class="uk-margin" uk-grid>
+
+			<span class="uk-text-bold">Database</span>
+			<div class="uk-inline uk-width-1-1">
+				<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: database"></span>
+				<input class="uk-input" name="database" type="database">
+			</div>
+
 			<span class="uk-text-bold">Password</span>
-			<div class="uk-inline">
+			<div class="uk-inline uk-width-1-1">
 				<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
 				<input class="uk-input" name="password" type="password">
 			</div>
-			<button class="uk-button uk-button-default uk-button-text" type="submit" name="ok" value="true">Login</button>
+
+			<div class="uk-width-1-1">
+				<button class="uk-button uk-button-default uk-button-text" type="submit" name="ok"
+					value="true">Login</button>
+			</div>
 		</div>
 	</form>
 </div>
