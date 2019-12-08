@@ -1,0 +1,85 @@
+{
+	"name": "filexshared",
+	"main": "index.js",
+	"bin": {
+		"filexshared": "index.js"
+	},
+	"preferGlobal": true,
+	"version": "2.3.3",
+	"description": "Share files Fast, Easy and Secure, to world or on your local network.",
+	"author": {
+		"email": "TiagoDanin@outlook.com",
+		"name": "Tiago Danin",
+		"url": "https://TiagoDanin.github.io"
+	},
+	"license": "MIT",
+	"keywords": [
+		"download",
+		"files",
+		"ftp",
+		"handlebars",
+		"manager",
+		"server",
+		"share",
+		"uikit",
+		"upload"
+	],
+	"scripts": {
+		"start": "node index.js",
+		"dev": "node index.js --dev",
+		"test": "xo"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TiagoDanin/FileXShared.git"
+	},
+	"homepage": "https://TiagoDanin.github.io/FileXShared",
+	"bugs": {
+		"url": "https://github.com/TiagoDanin/FileXShared/issues"
+	},
+	"github": {
+		"name": "FileXShared",
+		"owner": "TiagoDanin"
+	},
+	"files": [
+		"LICENSE",
+		"README.md",
+		"css",
+		"index.js",
+		"package.json",
+		"views",
+		"media"
+	],
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cookie-session": "^2.0.0-beta.3",
+		"download": "^7.1.0",
+		"express": "^4.17.1",
+		"express-handlebars": "3.1.0",
+		"filenamify": "^4.1.0",
+		"filenamify-url": "^2.1.0",
+		"hubdown": "2.1.0",
+		"mime": "^2.4.4",
+		"minimist": "^1.2.0",
+		"multer": "^1.4.2",
+		"path-exists": "^4.0.0",
+		"uikit": "^3.1.6"
+	},
+	"devDependencies": {
+		"xo": "0.24.0"
+	},
+	"xo": {
+		"rules": {
+			"quote-props": "warn",
+			"eqeqeq": "warn",
+			"array-callback-return": "warn",
+			"require-atomic-updates": "warn",
+			"no-else-return": "off"
+		},
+		"semicolon": false
+	}
+}
