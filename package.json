@@ -15,7 +15,7 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "node index.js",
-		"dev": "nodemon --watch views --watch index.js --watch css -e handlebars,js,css js index.js --dev --password 1234",
+		"dev": "nodemon --watch views --watch index.js --watch css --watch base -e handlebars,js,css js index.js --dev --password 1234",
 		"test": "xo"
 	},
 	"engines": {

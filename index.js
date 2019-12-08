@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
 const reload = require('reload')
 const helpers = require('handlebars-helpers')()
 const path = require('path').posix
@@ -9,6 +8,9 @@ const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
 const exphbs = require('express-handlebars')
 const express = require('express')
+
+const Database = require('./base/database')
+let database = undefined
 
 const password = argv.password || ''
 const port = argv.port || process.env.PORT || process.env.port || 3000
@@ -32,7 +34,8 @@ const checkPassword = (req, res) => {
 const app = express()
 const handlebarsContext = {
 	isDevMode,
-	isEnableClose
+	isEnableClose,
+	database: ''
 }
 
 const hbs = exphbs.create({
@@ -40,7 +43,8 @@ const hbs = exphbs.create({
 	partialsDir: path.join(__dirname, 'views/partials'),
 	layoutsDir: path.join(__dirname, 'views/layouts'),
 	helpers: {
-		...helpers
+		...helpers,
+		console: (text) => console.log(text)
 	}
 });
 
@@ -82,10 +86,53 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }))
 
-app.get(['/', '/dashboard'], (req, res) => {
+app.get(['/', '/dashboard'], async (req, res) => {
+	if (!database) {
+		database = new Database({
+			database: req.session.database
+		})
+	}
+	handlebarsContext.database = req.session.database
 	console.log('[!] Dashboard')
+
+	const result = [{
+		title: "Most Used",
+		qtTitle: "Calls",
+		list: await database.mostUsed()
+	}, {
+		title: "Most Rows",
+		qtTitle: "Rows",
+		list: await database.mostRows()
+	}, {
+		title: "Max Time",
+		qtTitle: "Time",
+		list: await database.maxTime()
+	}, {
+		title: "Min Time",
+		qtTitle: "Time",
+		list: await database.minTime()
+	}, {
+		title: "Mean Time",
+		qtTitle: "Time",
+		list: await database.meanTime()
+	}, {
+		title: "Local Read",
+		qtTitle: "Block",
+		list: await database.maxTime()
+	}, {
+		title: "Local Write",
+		qtTitle: "Block",
+		list: await database.maxTime()
+	}]
+
 	return res.render('dashboard', {
 		...handlebarsContext,
+		result: result.map(elemt => {
+			return {
+				...elemt,
+				...handlebarsContext
+			}
+		}),
 		path: '/dashboard'
 	})
 })
@@ -127,9 +174,13 @@ app.get('/login', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
-	const passwordInput = req.body.password || ''
-	req.session.password = passwordInput
+	req.session.password = req.body.password
+	req.session.database = req.body.database
+
 	if (checkPassword(req, res)) {
+		database = new Database({
+			database: req.session.database
+		})
 		return res.redirect('/dashboard')
 	}
 

@@ -1,7 +1,15 @@
 body {
-	background-color: rgba(253, 253, 253, 0.952)
+	background-color: rgba(253, 253, 253, 0.90)
 }
 
 #menu-top {
 	background-color: rgb(30, 135, 240);
+}
+
+#table-query {
+	white-space: nowrap;
+}
+
+#tr-query:hover {
+	background-color: rgba(0, 0, 0, 0.15)
 }

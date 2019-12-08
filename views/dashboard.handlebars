@@ -1,3 +1,55 @@
 <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@s uk-text-center" uk-grid>
+	{{#forEach result}}
+	{{#is index "6"}}
+	<div class="uk-card uk-card-default uk-card-body">
+		<p class="uk-card-title uk-margin-remove">Info</p>
+		<div class="uk-overflow-hidden">
+			<ul class="uk-list uk-list-bullet">
+				<li>Database: {{database}}</li>
+				{{#isDevMode}}
+				<li>DevMode: true</li>
+				{{/isDevMode}}
+			</ul>
 
+		</div>
+	</div>
+	{{/is}}
+
+	<div class="uk-card uk-card-default uk-card-body">
+		<p class="uk-card-title uk-margin-remove">{{title}}</p>
+		<div class="uk-overflow-hidden">
+			<table class="uk-table uk-table-striped" id="table-query">
+				<thead>
+					<tr>
+						<th>{{qtTitle}}</th>
+						<th>Query</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#forEach list}}
+					<tr id="tr-query" onclick="modalQuery(this)">
+						<td>{{qt}}</td>
+						<td>{{query}}</td>
+					</tr>
+					{{/forEach}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	{{/forEach}}
 </div>
+
+<script>
+	const modalQuery = (event) => {
+		const query = event.getElementsByTagName('td')[1].innerText
+		UIkit.modal.alert(`
+			<div class="uk-modal-header">
+				<h2 class="uk-modal-title">Query</h2>
+			</div>
+			<p class="uk-modal-body" uk-overflow-auto>${query}</p>
+		`).then(function () {
+			console.log('Alert closed.')
+		});
+
+	}
+</script>
