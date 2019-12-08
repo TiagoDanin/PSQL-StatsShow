@@ -1,7 +1,7 @@
 <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@s uk-text-center" uk-grid>
 	{{#forEach result}}
 	{{#is index "6"}}
-	<div class="uk-card uk-card-default uk-card-body">
+	<div class="uk-card uk-card-default uk-card-body" id="card-query">
 		<p class="uk-card-title uk-margin-remove">Info</p>
 		<div class="uk-overflow-hidden">
 			<ul class="uk-list uk-list-bullet">
@@ -15,7 +15,7 @@
 	</div>
 	{{/is}}
 
-	<div class="uk-card uk-card-default uk-card-body">
+	<div class="uk-card uk-card-default uk-card-body" id="card-query">
 		<p class="uk-card-title uk-margin-remove">{{title}}</p>
 		<div class="uk-overflow-hidden">
 			<table class="uk-table uk-table-striped" id="table-query">

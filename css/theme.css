@@ -51,3 +51,7 @@ a:hover {
 	padding: 1px 2px;
 	text-align: start;
 }
+
+*+.uk-grid-margin-large,.uk-grid+.uk-grid-large,.uk-grid+.uk-grid-row-large,.uk-grid-large>.uk-grid-margin,.uk-grid-row-large>.uk-grid-margin {
+    margin-top: 0px;
+}
