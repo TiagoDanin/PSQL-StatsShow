@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
+const path = require('path').posix
 const reload = require('reload')
 const helpers = require('handlebars-helpers')()
-const path = require('path').posix
 const argv = require('minimist')(process.argv)
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
@@ -10,7 +10,7 @@ const exphbs = require('express-handlebars')
 const express = require('express')
 
 const Database = require('./base/database')
-let database = undefined
+let database
 
 const password = argv.password || ''
 const port = argv.port || process.env.PORT || process.env.port || 3000
@@ -44,9 +44,9 @@ const hbs = exphbs.create({
 	layoutsDir: path.join(__dirname, 'views/layouts'),
 	helpers: {
 		...helpers,
-		console: (text) => console.log(text)
+		console: text => console.log(text)
 	}
-});
+})
 
 app.engine('handlebars', hbs.engine)
 
@@ -69,7 +69,7 @@ if (!isDevMode) {
 app.use((req, res, next) => {
 	// Console.log(`[:]Path: ${req.path}`)
 	if (
-		req.path != '/login' &&
+		req.path !== '/login' &&
 		!(req.path.startsWith('/css') || req.path.startsWith('/uikit') || req.path.startsWith('/reload')) &&
 		!checkPassword(req, res)
 	) {
@@ -82,6 +82,7 @@ app.use((req, res, next) => {
 			database: req.session.database
 		})
 	}
+
 	handlebarsContext.database = req.session.database
 
 	return next()
@@ -97,32 +98,32 @@ app.get(['/', '/dashboard'], async (req, res) => {
 	console.log('[!] Dashboard')
 
 	const result = [{
-		title: "Most Used",
-		qtTitle: "Calls",
+		title: 'Most Used',
+		qtTitle: 'Calls',
 		list: await database.mostUsed()
 	}, {
-		title: "Most Rows",
-		qtTitle: "Rows",
+		title: 'Most Rows',
+		qtTitle: 'Rows',
 		list: await database.mostRows()
 	}, {
-		title: "Max Time",
-		qtTitle: "Time",
+		title: 'Max Time',
+		qtTitle: 'Time',
 		list: await database.maxTime()
 	}, {
-		title: "Min Time",
-		qtTitle: "Time",
+		title: 'Min Time',
+		qtTitle: 'Time',
 		list: await database.minTime()
 	}, {
-		title: "Mean Time",
-		qtTitle: "Time",
+		title: 'Mean Time',
+		qtTitle: 'Time',
 		list: await database.meanTime()
 	}, {
-		title: "Local Read",
-		qtTitle: "Block",
+		title: 'Local Read',
+		qtTitle: 'Block',
 		list: await database.maxTime()
 	}, {
-		title: "Local Write",
-		qtTitle: "Block",
+		title: 'Local Write',
+		qtTitle: 'Block',
 		list: await database.maxTime()
 	}]
 
@@ -139,8 +140,10 @@ app.get(['/', '/dashboard'], async (req, res) => {
 })
 
 const search = async (req, res) => {
-	const query = req.body.query
-	let result = undefined
+	const {
+		query
+	} = req.body
+	let result
 	if (query) {
 		const select = await database.get(query, []).catch(error => {
 			res.render('alert', {
@@ -153,14 +156,16 @@ const search = async (req, res) => {
 
 		if (!select) {
 			return undefined
-		} else if (select.error) {
+		}
+
+		if (select.error) {
 			return res.render('alert', {
 				...handlebarsContext,
 				path: req.path,
 				text: select.error
 			})
 		}
-	
+
 		result = {}
 		result.keys = Object.keys(select[0])
 		result.data = select.map(elemt => Object.values(elemt))
@@ -212,23 +217,23 @@ app.get('/login', (req, res) => {
 	})
 })
 
-app.post('/login',async (req, res) => {
+app.post('/login', async (req, res) => {
 	req.session.password = req.body.password
-	req.session.database = req.body.database
 
 	if (checkPassword(req, res)) {
+		req.session.database = req.body.database
 		database = new Database({
 			database: req.session.database
 		})
-		await database.get('SELECT $1', ['Hello world!']).catch(error => {
+
+		await database.get('SELECT $1', ['Hello world!']).catch(() => {
 			req.session.password = ''
+			req.session.database = ''
 			return res.redirect('/login')
 		}).then(() => {
 			return res.redirect('/dashboard')
 		})
 	}
-
-	return res.redirect('/login')
 })
 
 app.listen(app.get('port'), () => {
