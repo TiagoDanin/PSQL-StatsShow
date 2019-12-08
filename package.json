@@ -50,13 +50,13 @@
 		"minimist": "^1.2.0",
 		"uikit": "^3.1.6",
 		"handlebars-helpers": "^0.10.0",
-		"pg": "7.11.0",
+		"pg": "7.14.0",
 		"pg-native": "3.0.0"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.1",
 		"reload": "^3.0.3",
-		"xo": "0.24.0"
+		"xo": "0.25.3"
 	},
 	"xo": {
 		"rules": {
