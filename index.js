@@ -130,7 +130,7 @@ app.get(['/', '/dashboard'], async (req, res) => {
 	const blockSize = await database.get('SHOW block_size;', [])
 	const maxConnections = await database.get('SHOW max_connections;', [])
 	const timeZone = await database.get('SHOW timezone;', [])
-	
+
 	return res.render('dashboard', {
 		...handlebarsContext,
 		result: result.map(elemt => {
