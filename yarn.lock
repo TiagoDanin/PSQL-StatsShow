@@ -807,10 +807,10 @@ commander@~2.20.3:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@~3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-3.0.2.tgz#6837c3fb677ad9933d1cfba42dd14d5117d6b39e"
-  integrity sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
+commander@~4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
+  integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -4054,13 +4054,13 @@ relative@^3.0.2:
   dependencies:
     isobject "^2.0.0"
 
-reload@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/reload/-/reload-3.0.3.tgz#9fe649f7c8c9ab59b63af5557c5f4bdbf255cf55"
-  integrity sha512-VLRSdL8MHWqq/YFGpaTbtijbcIXCkh02SahJgQEqCg082KPfmFroN3YokkuYCVsKLMSD3+PMvUnd3QMu4tr3pQ==
+reload@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/reload/-/reload-3.0.4.tgz#a569fce66761a98dd6bd70a4e727e57773e852f4"
+  integrity sha512-Jddjfwz19wvOooGE3LoIUVhDyndFlJqrWQ/dQJssKfc7TwGUuJe02hTHerWRMmilWGg2hFxMB+D2wMmrkSH3kw==
   dependencies:
     cli-color "~2.0.0"
-    commander "~3.0.0"
+    commander "~4.1.0"
     finalhandler "~1.1.1"
     minimist "~1.2.0"
     open "^7.0.0"
