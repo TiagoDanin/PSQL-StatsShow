@@ -69,7 +69,7 @@
 		"pg": "7.18.2",
 		"pg-native": "3.0.0",
 		"reload": "^3.0.4",
-		"uikit": "^3.3.2"
+		"uikit": "^3.3.3"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.2",
