@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.2",
-		"xo": "0.28.3"
+		"xo": "0.30.0"
 	},
 	"xo": {
 		"rules": {
