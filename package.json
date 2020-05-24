@@ -66,7 +66,7 @@
 		"express-handlebars": "4.0.4",
 		"handlebars-helpers": "^0.10.0",
 		"minimist": "^1.2.5",
-		"pg": "8.0.3",
+		"pg": "8.2.1",
 		"pg-native": "3.0.0",
 		"reload": "^3.0.4",
 		"uikit": "^3.4.2"
