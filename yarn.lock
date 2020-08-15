@@ -687,11 +687,6 @@ astral-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
-async-limiter@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
-  integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
-
 at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
@@ -1141,10 +1136,10 @@ commander@~2.20.3:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@~4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
-  integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
+commander@~5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
+  integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -4806,20 +4801,20 @@ relative@^3.0.2:
   dependencies:
     isobject "^2.0.0"
 
-reload@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/reload/-/reload-3.0.4.tgz#a569fce66761a98dd6bd70a4e727e57773e852f4"
-  integrity sha512-Jddjfwz19wvOooGE3LoIUVhDyndFlJqrWQ/dQJssKfc7TwGUuJe02hTHerWRMmilWGg2hFxMB+D2wMmrkSH3kw==
+reload@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/reload/-/reload-3.1.0.tgz#c366d0955558a33a5d834da3ea46ae908fec130c"
+  integrity sha512-hoBbG4CcVrySg/de7nesHt9Lw0ryJkvg0YfNHnJuO4YtosENX6F5iFc2KgEqErrcDfAZbtWQ7wrJ8eqyUUUxpw==
   dependencies:
     cli-color "~2.0.0"
-    commander "~4.1.0"
+    commander "~5.1.0"
     finalhandler "~1.1.1"
     minimist "~1.2.0"
     open "^7.0.0"
     serve-static "~1.14.0"
     supervisor "~0.12.0"
     url-parse "~1.4.4"
-    ws "~7.2.0"
+    ws "~7.3.0"
 
 remarkable@^1.6.2, remarkable@^1.7.1:
   version "1.7.4"
@@ -5917,12 +5912,10 @@ write@1.0.3:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@~7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.0.tgz#422eda8c02a4b5dba7744ba66eebbd84bcef0ec7"
-  integrity sha512-+SqNqFbwTm/0DC18KYzIsMTnEWpLwJsiasW/O17la4iDRRIO9uaHbvKiAS3AHgTiuuWerK/brj4O6MYZkei9xg==
-  dependencies:
-    async-limiter "^1.0.0"
+ws@~7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.0.tgz#4b2f7f219b3d3737bc1a2fbf145d825b94d38ffd"
+  integrity sha512-iFtXzngZVXPGgpTlP1rBqsUK82p9tKqsWRPg5L56egiljujJT3vGAYnHANvFxBieXrTFavhzhxW52jnaWV+w2w==
 
 xdg-basedir@^3.0.0:
   version "3.0.0"
