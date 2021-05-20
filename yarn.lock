@@ -2701,7 +2701,7 @@ glob-to-regexp@^0.3.0:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
   integrity sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=
 
-glob@^7.1.3, glob@^7.1.6:
+glob@^7.1.3:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -5925,10 +5925,10 @@ uglify-js@^3.1.4:
     commander "~2.20.3"
     source-map "~0.6.1"
 
-uikit@^3.6.21:
-  version "3.6.21"
-  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.6.21.tgz#2fcd13181ace58baeb1412ab18ff09225dceaa27"
-  integrity sha512-UeL1rRadB+T7PIvkAIVU4vSTiU0uu+F64ltTD2+1EAyhA99IEX2BJdHEvqMKE/NcaNNYkz1uw4rDxIYERyS/DA==
+uikit@^3.6.22:
+  version "3.6.22"
+  resolved "https://registry.yarnpkg.com/uikit/-/uikit-3.6.22.tgz#bbf3d64f9715ec09b3dead80845f2784447d7048"
+  integrity sha512-c8jz0lzvGPrPbOG4K5HvOCgUe7i9A6blZmMq2M/EYqoY7FT9dBayGFZYbBeio2s9WCpADIcCAj2QX/5L3EByOQ==
 
 unc-path-regex@^0.1.2:
   version "0.1.2"
