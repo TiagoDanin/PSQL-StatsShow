@@ -35,7 +35,7 @@
 		"test": "xo"
 	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=v14.18.1"
 	},
 	"private": false,
 	"repository": {
