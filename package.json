@@ -67,7 +67,7 @@
 		"handlebars-helpers": "^0.10.0",
 		"minimist": "^1.2.5",
 		"pg": "8.3.3",
-		"pg-native": "3.0.0",
+		"pg-native": "3.0.1",
 		"reload": "^3.1.1",
 		"uikit": "^3.6.22"
 	},
