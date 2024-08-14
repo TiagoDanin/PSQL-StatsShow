@@ -68,7 +68,7 @@
 		"minimist": "^1.2.5",
 		"pg": "8.3.3",
 		"pg-native": "3.0.0",
-		"reload": "^3.1.1",
+		"reload": "^3.3.0",
 		"uikit": "^3.6.22"
 	},
 	"devDependencies": {
